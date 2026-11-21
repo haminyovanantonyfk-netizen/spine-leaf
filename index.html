@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f1e3">
+<meta name="description" content="SpineLeaf — free, open-source book scanner and reader. Scan curved book pages, OCR in English and Malayalam, export searchable PDFs, and tap any sentence to hear it read aloud. Everything runs on your device.">
+<title>SpineLeaf — Book Scanner & Reader</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="icon.svg" alt="" width="34" height="34">
+    <div>
+      <strong>SpineLeaf</strong>
+      <small>Scan · Read · Listen — free, on-device</small>
+    </div>
+  </div>
+  <div class="top-actions">
+    <label class="theme-label">Theme
+      <select id="themeSelect" aria-label="Theme">
+        <option value="light">Paper</option>
+        <option value="dark">Dark</option>
+        <option value="contrast">High contrast</option>
+      </select>
+    </label>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Main">
+  <button id="tabLibrary" class="tab active" role="tab" aria-selected="true">📚 Library</button>
+  <button id="tabScan" class="tab" role="tab" aria-selected="false">📷 Scan</button>
+  <button id="tabReader" class="tab" role="tab" aria-selected="false">📖 Reader</button>
+</nav>
+
+<main id="view" tabindex="-1"></main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="progressWrap" class="progress-wrap" hidden>
+  <div class="progress-card">
+    <p id="progressLabel">Working…</p>
+    <progress id="progressBar" max="100" value="0"></progress>
+    <button id="progressCancel" class="btn ghost">Cancel</button>
+  </div>
+</div>
+
+<input type="file" id="imgInput" accept="image/*" multiple hidden>
+<input type="file" id="pdfInput" accept="application/pdf,.pdf" hidden>
+<input type="file" id="restoreInput" accept="application/json,.json" hidden>
+
+<script src="vendor/regenerator-runtime.js"></script>
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="vendor/fontkit.umd.min.js"></script>
+<script src="vendor/tesseract.min.js"></script>
+<script src="db.js"></script>
+<script src="imaging.js"></script>
+<script src="ocr.js"></script>
+<script src="reader.js"></script>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js').catch(() => {}));
+}
+</script>
+</body>
+</html>
