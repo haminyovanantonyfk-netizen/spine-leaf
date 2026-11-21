@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="SpineLeaf icon">
+  <rect width="512" height="512" rx="96" fill="#f7f1e3"/>
+  <!-- open book -->
+  <path d="M256 108c-38-26-84-38-138-36-14 1-22 8-22 22v292c0 13 9 21 22 20 54-2 100 10 138 36 38-26 84-38 138-36 13 1 22-7 22-20V94c0-14-8-21-22-22-54-2-100 10-138 36z" fill="#fffdf6" stroke="#1b2a4a" stroke-width="14"/>
+  <path d="M256 108v334" stroke="#1b2a4a" stroke-width="10"/>
+  <!-- page lines -->
+  <path d="M140 176c30-6 58-2 84 10M140 232c30-6 58-2 84 10M140 288c30-6 58-2 84 10" stroke="#43536e" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M288 186c26-12 54-16 84-10M288 242c26-12 54-16 84-10M288 298c26-12 54-16 84-10" stroke="#43536e" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <!-- leaf growing from the spine -->
+  <path d="M256 330c0-52 22-92 66-118-4 56-24 96-66 118z" fill="#0e7c86"/>
+  <path d="M256 330c0-40-16-70-50-90 3 42 18 74 50 90z" fill="#2bb3bf"/>
+  <path d="M256 330v52" stroke="#0a5d64" stroke-width="10" stroke-linecap="round"/>
+</svg>
