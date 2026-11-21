@@ -17,7 +17,6 @@ jobs:
       - name: Prepare web assets for Capacitor
         run: |
           mkdir -p www && cp index.html styles.css manifest.webmanifest service-worker.js icon.svg db.js imaging.js ocr.js reader.js app.js www/ && cp -r vendor www/
-          cp index.html styles.css app.js i18n.js manifest.webmanifest service-worker.js icon.svg www/
       - run: npm install
       - name: Add Android project and sync
         run: |
