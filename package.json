@@ -1,0 +1,16 @@
+{
+  "name": "spineleaf",
+  "version": "1.0.0",
+  "description": "SpineLeaf — free, open-source book scanner and reader (Android, iPhone, web). On-device scanning, OCR (English + Malayalam), searchable PDF export, and tap-to-listen reading.",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "serve": "python3 -m http.server 8765"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/ios": "^6.0.0"
+  }
+}
