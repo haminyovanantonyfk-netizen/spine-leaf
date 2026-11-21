@@ -1,0 +1,6 @@
+{
+  "appId": "app.spineleaf.free",
+  "appName": "SpineLeaf",
+  "webDir": "www",
+  "server": { "androidScheme": "https" }
+}
