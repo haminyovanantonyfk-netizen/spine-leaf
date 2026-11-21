@@ -1,0 +1,33 @@
+name: Build iOS (unsigned)
+on:
+  workflow_dispatch:
+# Note: an App Store / TestFlight release requires the repo owner's own
+# Apple Developer account ($99/yr, charged by Apple) and signing certificates.
+# This workflow proves the iOS project builds and produces an unsigned .app.
+# For everyone else, the iOS home-screen (PWA) install in the README is free.
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Prepare web assets for Capacitor
+        run: |
+          mkdir -p www
+          cp index.html styles.css app.js i18n.js manifest.webmanifest service-worker.js icon.svg www/
+      - run: npm install
+      - name: Add iOS project and sync
+        run: |
+          npx cap add ios
+          npx cap sync ios
+      - name: Build unsigned
+        working-directory: ios/App
+        run: |
+          xcodebuild -project App.xcodeproj -scheme App -configuration Release \
+            -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+          cd build/Build/Products/Release-iphoneos && zip -r ../../../../ShipCheck-unsigned.zip App.app
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ShipCheck-iOS-unsigned
+          path: ShipCheck-unsigned.zip
