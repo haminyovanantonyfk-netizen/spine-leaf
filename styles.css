@@ -110,6 +110,7 @@ input[type="range"]{width:100%;accent-color:var(--teal)}
 .playbar button{flex:1}
 .sepia{background:#f4ecd8!important;color:#3b2f1d!important}
 .progress-wrap{position:fixed;inset:0;background:rgba(10,15,25,.55);display:flex;align-items:center;justify-content:center;z-index:50}
+.progress-wrap[hidden]{display:none}
 .progress-card{background:var(--card);border-radius:var(--radius);padding:20px;width:min(420px,90vw);box-shadow:var(--shadow)}
 .progress-card progress{width:100%;height:18px;accent-color:var(--teal)}
 #toast{
